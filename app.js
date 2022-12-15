@@ -10,7 +10,7 @@ const descargaTemplates = async () => {
     await axios.get(`http://partner.gupshup.io/partner/app/${process.env.APP_ID}/templates`, { headers })
         .then((response) => {
             templates = response.data.templates.map((template) => {
-                if (template.status != 'REJECTED' && template.elementName.includes('nuevo')) {
+                if (template.status != 'REJECTED') {
                     const templateReturn = {
                         appId: template.appId,
                         data: template.data,
@@ -37,6 +37,7 @@ const insertaTemplates = async () => {
                 message_content: template.example,
                 template_token: template.id
             });
+            console.log('\n************************\n');
         }
     });
 }
