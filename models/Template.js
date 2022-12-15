@@ -22,6 +22,15 @@ const Template = sequelize.define('templates_gupshups',{
         allowNull:false
     },
     //client_organization_ident
+    client_organization_ident:{
+        type:DataTypes.STRING,
+        defaultValue: process.env.SECTOR
+    },
+    /*visible_chat
+    visible_chat:{
+        type: DataTypes.TINYINT(1),
+        defaultValue:1
+    },*/
     //createdAt
     createdAt:{
         type:DataTypes.DATE,
